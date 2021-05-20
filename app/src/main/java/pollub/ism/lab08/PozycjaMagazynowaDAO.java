@@ -22,4 +22,8 @@ public interface PozycjaMagazynowaDAO {
 
     @Query("SELECT COUNT(*) FROM Warzywniak") //Ile jest rekordów w tabeli
     int size();
+
+    // Pobranie id konkretnego warzywa
+    @Query("SELECT _id FROM Warzywniak WHERE NAME= :wybraneWarzywoNazwa")
+    int idWarzywaPoNazwie(String wybraneWarzywoNazwa);
 }
